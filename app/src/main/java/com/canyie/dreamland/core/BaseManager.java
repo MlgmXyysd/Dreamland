@@ -1,5 +1,7 @@
 package com.canyie.dreamland.core;
 
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
@@ -31,6 +33,7 @@ public abstract class BaseManager<T> {
             mFile = new File(Dreamland.BASE_DIR, mFileName);
             mBackupFile = new File(Dreamland.BASE_DIR, mFileName + ".bak");
         }
+        Log.d(TAG, "Load list: " + mFile.getName());
     }
 
     public File getFile() {
