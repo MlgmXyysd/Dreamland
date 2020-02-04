@@ -22,8 +22,15 @@ public abstract class BaseManager<T> {
     private volatile boolean mLoaded;
 
     protected BaseManager(String filename) {
-        mFile = new File(Dreamland.BASE_DIR, filename);
-        mBackupFile = new File(Dreamland.BASE_DIR,filename + ".bak");
+        File temp = new File(Dreamland.BASE_DIR, filename);
+        String mFileName = "modules.json";
+        if (temp.exists()) {
+            mFile = new File(Dreamland.BASE_DIR, filename);
+            mBackupFile = new File(Dreamland.BASE_DIR, filename + ".bak");
+        } else {
+            mFile = new File(Dreamland.BASE_DIR, mFileName);
+            mBackupFile = new File(Dreamland.BASE_DIR, mFileName + ".bak");
+        }
     }
 
     public File getFile() {
