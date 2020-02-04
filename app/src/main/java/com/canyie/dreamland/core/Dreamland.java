@@ -129,6 +129,7 @@ public final class Dreamland {
         hooked = true;
 
         Log.i(TAG, "Loading xposed-style modules for process " + processName);
+        Log.i(TAG, "Hello, MlgmXyysd. Can u see me?");
 
         XC_LoadPackage.LoadPackageParam param = new XC_LoadPackage.LoadPackageParam(XposedBridge.sLoadedPackageCallbacks);
         param.packageName = packageName;
