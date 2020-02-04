@@ -55,7 +55,8 @@ public final class Dreamland {
     }
 
     public void initProperties() {
-        mModuleManager = new ModuleManager();
+        Log.d(TAG, packageName);
+        mModuleManager = new ModuleManager(packageName);
         mModuleManager.startLoad();
         mAppManager = new AppManager();
         mAppManager.startLoad();

@@ -12,8 +12,8 @@ import java.util.concurrent.ConcurrentHashMap;
  * @author canyie
  */
 public final class ModuleManager extends GsonBasedManager<ConcurrentHashMap<String, ModuleInfo>> {
-    ModuleManager() {
-        super("modules.json");
+    ModuleManager(String packageName) {
+        super(packageName + ".json");
     }
 
     public Map<String, ModuleInfo> getEnabledModules() {
